@@ -37,8 +37,14 @@ To run this app, navigate to `dockerfile/` directory.
 Confirm that the app is running by navigating to `localhost:5000`.
 
 ## Manual and Automated Testing
-For the ML model, we tested using the F1 score metric from the Scikit-learn library to obtain an accuracy score on unseen data.
-For the microservice, we did:
+For the ML model, we manually tested using the F1 score metric from the Scikit-learn library to obtain an accuracy score of 98% on unseen data.
+
+For microservice automated testing, we did:
 - GitHub actions
     - This tests if the build succeeds with no error
 - `pytest` testing
+    - The tests are included in dockerfile/test_client.py. To run the tests, cd into dockerfile and run python3.8 -m pytest -v. 
+    - The tests currently cover a series of edge cases: 
+       - First, we check to see if the client is running at "localhost:5000" (where we expect to get a message telling us to try the predict route).
+       - Then, we check to see if the client predicts on various ranges of data. We check to make sure it does not crash and then print the resulting prediction.
+       - Then, we check edge cases: predicting with no features, a missing feature, multiple missing features, and an additional feature. 
