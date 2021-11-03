@@ -49,3 +49,7 @@ For microservice automated testing, we did:
        - First, we check to see if the client is running at "localhost:5000" (where we expect to get a message telling us to try the predict route).
        - Then, we check to see if the client predicts on various ranges of data. We check to make sure it does not crash and then print the resulting prediction.
        - Then, we check edge cases: predicting with no features, a missing feature, multiple missing features, and an additional feature. 
+
+## References
+For cross validation: https://towardsdatascience.com/hyperparameter-tuning-the-random-forest-in-python-using-scikit-learn-28d2aa77dd74
+For creating the API: https://towardsdatascience.com/a-flask-api-for-serving-scikit-learn-models-c8bcdaa41daa
