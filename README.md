@@ -30,4 +30,7 @@ As there was no significant improvement for the model with cross validation, the
 The code used for the training of the model and cross validation can be found at [model_build.ipynb](https://github.com/CMU-313/fall-2021-hw4-451-unavailable-for-legal-reasons/blob/master/model_build.ipynb).
 
 ## Manual and Automated Testing
-For Automated Testing, we did both GitHub actions, which allowed for CI testing, and pytest.
+For Automated Testing, we did:
+- GitHub actions
+ - This tests if the build succeeds with no error
+- `pytest` testing
