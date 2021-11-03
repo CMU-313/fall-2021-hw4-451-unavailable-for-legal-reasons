@@ -20,25 +20,25 @@ def test_client(client):
     print("Test passed!")
 
 def test_predict1(client):
-    r = client.get('/predict?age=15&absences=5&health=2')
+    r = client.get('/predict?age=15&absences=5&health=2&G1=10&G2=10&Studytime=2')
     print("Testing prediction...", end=" ")
     assert "Internal Server Error" not in str(r.data)
     print("Test passed!")
-    print(f"Prediction received on age=18, absences=93, health=2: {r.data}")
+    print(f"[MID] Prediction received on age=18, absences=93, health=2, G1=10, G2=10, Studytime=2: {r.data}")
 
 def test_predict2(client):
-    r = client.get('/predict?age=18&absences=93&health=2')
+    r = client.get('/predict?age=18&absences=93&health=2&G1=1&G2=1&Studytime=1')
     print("Testing prediction...", end=" ")
     assert "Internal Server Error" not in str(r.data)
     print("Test passed!")
-    print(f"Prediction received on age=18, absences=93, health=2: {r.data}")
+    print(f"[LOW] Prediction received on age=18, absences=93, health=2, G1=1, G2=1, Studytime=1: {r.data}")
 
 def test_predict3(client):
-    r = client.get('/predict?age=22&absences=1&health=5')
+    r = client.get('/predict?age=22&absences=1&health=5&G1=20&G2=20&Studytime=4')
     print("Testing prediction...", end=" ")
     assert "Internal Server Error" not in str(r.data)
     print("Test passed!")
-    print(f"Prediction received on age=22, absences=1, health=5: {r.data}")
+    print(f"[HIGH] Prediction received on age=22, absences=1, health=5, G1=20, G2=20, Studytime=4: {r.data}")
 
 def test_empty(client):
     r = client.get('/predict?')
