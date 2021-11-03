@@ -31,6 +31,7 @@ The code used for the training of the model and cross validation can be found at
 
 ## Manual and Automated Testing
 For Automated Testing, we did:
-* GitHub actions
- * This tests if the build succeeds with no error
-* `pytest` testing
+- GitHub actions
+    - This tests if the build succeeds with no error
+- `pytest` testing
+
