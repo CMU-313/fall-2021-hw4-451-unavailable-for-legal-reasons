@@ -1,7 +1,7 @@
 name: learn-github-actions
 on:
   push:
-    branches: [ $default-branch ]
+    branches: [ master ]
 jobs:
   automated-testing:
     runs-on: ubuntu-latest
