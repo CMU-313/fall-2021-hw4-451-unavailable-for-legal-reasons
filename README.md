@@ -41,7 +41,8 @@ For the ML model, we manually tested using the F1 score metric from the Scikit-l
 
 For microservice automated testing, we did:
 - GitHub actions
-    - This tests if the build succeeds with no error
+    - This tests if the build succeeds with no error.
+    - These tests are apart of our CI testing, where it will be run with every pull request and push to master.
 - `pytest` testing
     - The tests are included in dockerfile/test_client.py. To run the tests, cd into dockerfile and run python3.8 -m pytest -v. 
     - The tests currently cover a series of edge cases: 
