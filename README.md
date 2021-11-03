@@ -38,4 +38,7 @@ Confirm that the app is running by navigating to `localhost:5000`.
 
 ## Manual and Automated Testing
 For the ML model, we tested using the F1 score metric from the Scikit-learn library to obtain an accuracy score on unseen data.
-For the microservice, we did both GitHub actions, which allowed for CI testing, and pytest.
+For the microservice, we did:
+- GitHub actions
+    - This tests if the build succeeds with no error
+- `pytest` testing
