@@ -1,0 +1,37 @@
+name: Automated Testing
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+          echo "Hello ${{ github.event.inputs.name }}!"
+          echo "- in ${{ github.event.inputs.home }}!"
+  building:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image and container
+        run: |
+          cd dockerfile
+          docker build -t ml:latest .
+          docker run -d -p 5000:5000 ml
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Checking localhost exists
+        run: |
+          cd dockerfile
+          docker build -t ml:latest .
+          docker run -d -p 5000:5000 ml
+          curl localhost:5000
+          curl http://localhost:5000/predict?studytime=4&health=5&absences=1&age=20
+          curl http://localhost:5000/predict?studytime=1&health=3&absences=10&age=15
