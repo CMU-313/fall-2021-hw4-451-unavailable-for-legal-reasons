@@ -37,7 +37,7 @@ To run this app, navigate to `dockerfile/` directory.
 Confirm that the app is running by navigating to `localhost:5000`.
 
 ## Manual and Automated Testing
-For the ML model, we manually tested using the F1 score metric from the Scikit-learn library to obtain an accuracy score of 98% on unseen data.
+For the ML model, we manually tested using the F1 score metric from the Scikit-learn library to obtain an accuracy score on unseen data.
 
 For microservice automated testing, we did:
 - GitHub actions
