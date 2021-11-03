@@ -4,7 +4,7 @@
 - Follow Deployment Instructions to get the API running.
 - The API expects input from the client in the form of a JSON string, which includes the features selected for the ML model, consisting of `G1`, `G2`, `Studytime`, `Absences`, `Age`, and `Health`. It should be stored in a .json file under the same directory as the `client.py` file. 
 - To obtain the prediction of whether the student will succeed from the ML mode, compile and run the `client.py` file.
-- The output will be in the form of a json object the key "prediction". If the value field is 0, the student is likely to fail. If the value field is 1 the student is expected to succeed.
+- The output will be in the form of a json object the key "prediction". If the value field is 0, the student is likely to fail. If the value field is 1, the student is expected to succeed.
 
 ## Information on ML model
 The baseline model had 3 features, Health, Age and Absences. In our new model, we trained using the existing 3 features and 3 additional features, Studytime, G1 score and G2 score. The retrained model shows a large improvement in F1 score, from 52.2% to 95.8%.
@@ -44,7 +44,7 @@ For microservice automated testing, we did:
     - This tests if the build succeeds with no error.
     - These tests are apart of our CI testing, where it will be run with every pull request and push to master.
 - `pytest` testing
-    - The tests are included in dockerfile/test_client.py. To run the tests, cd into dockerfile and run python3.8 -m pytest -v. 
+    - The tests are included in dockerfile/test_client.py. To run the tests, navigate to the `dockerfile/` directory and run `python3.8 -m pytest -v`. 
     - The tests currently cover a series of edge cases: 
        - First, we check to see if the client is running at "localhost:5000" (where we expect to get a message telling us to try the predict route).
        - Then, we check to see if the client predicts on various ranges of data. We check to make sure it does not crash and then print the resulting prediction.
