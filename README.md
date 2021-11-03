@@ -28,3 +28,6 @@ However, the results obtained from cross validation were comparable to that obta
 As there was no significant improvement for the model with cross validation, the model without cross validation was deployed for prediction.
 
 The code used for the training of the model and cross validation can be found at [model_build.ipynb](https://github.com/CMU-313/fall-2021-hw4-451-unavailable-for-legal-reasons/blob/master/model_build.ipynb).
+
+## Manual and Automated Testing
+For Automated Testing, we did both GitHub actions, which allowed for CI testing, and pytest.
